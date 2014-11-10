@@ -1,0 +1,72 @@
+html, body {
+	font-size: 16px;
+	height: 100%;
+	width: 100%;
+}
+
+div, p, li, h1, h2, h3 {
+	box-sizing: box-border;
+}
+
+/* type */
+
+h1, h2 {font-family: 'Rock Salt', cursive;}
+
+h1 {font-size: 24px;}
+h2 {font-size: 18px;}
+
+p, li {
+	font-family: 'News Cycle', sans-serif;
+	font-size: .9em;
+	color: #333;
+}
+
+/* layout */
+.shopapp {
+	width: 100%;
+	height: 100%;
+}
+
+.shopapp_wrapper {
+	width: 600px;
+	margin: 1.5em auto 3em auto;
+	border: .1em solid #eee;
+}
+.shopapp_container {
+	padding: 1em;
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+/* basic functionality */
+input, 
+.shopapp_panel-additem,
+.shopapp_panel-viewremoved,
+.shopapp_checkbox-additem:checked ~ .shopapp_panel-viewremoved, 
+.shopapp_checkbox-viewremoved:checked ~ .shopapp_panel-additem 
+{
+	display: none;
+}
+.shopapp_checkbox-additem:checked ~ .shopapp_panel-additem, 
+.shopapp_checkbox-viewremoved:checked ~ .shopapp_panel-viewremoved {
+	display: block;
+}
+
+/* media queries */
+@media all and (max-width: 480px) {
+
+}
+
+@media all and (max-width: 768px) {
+
+}
+
+@media all and (max-width: 991px) {
+
+}
+
+@media all and (min-width: 1000px) {
+
+}

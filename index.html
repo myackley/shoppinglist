@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shopping List</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+	<link href='http://fonts.googleapis.com/css?family=News+Cycle|Rock+Salt' rel='stylesheet' type='text/css'>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	
+	<div class="shopapp">
+
+		<div class="shopapp_wrapper">
+			<div class="shopapp_container">
+
+				<input type="checkbox" class="shopapp_checkbox-additem" id="additem">
+				<label for="additem" class="label">Add Item <span class="fa fa-plus"></span></label>
+
+				<div class="shopapp_panel-additem">
+					additem
+				</div>
+
+				<div class="shopapp_list">
+					<ul>
+						<li>
+							<div class="shopapp_list-item">
+								<p>Item<span>(x3)</span></p>
+							</div>
+							<div class="shopapp_list-btns">
+								<a href="#" class="shopapp_btn-check">
+									<span class="fa fa-check">
+									</span>
+								</a>
+								<a href="#" class="shopapp_btn-remove">
+									<span class="fa fa-close">
+									</span>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<input type="checkbox" class="shopapp_checkbox-viewremoved" id="viewremoved">
+				<label for="viewremoved" class="label">View Removed <span class="fa fa-eye"></span></label>
+
+				<div class="shopapp_panel-viewremoved">
+					viewremoved
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
