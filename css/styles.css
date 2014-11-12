@@ -2,6 +2,9 @@ html, body {
 	font-size: 16px;
 	height: 100%;
 	width: 100%;
+	background: url('../img/food-bg.jpg') 0 0 #ccc no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 div, p, li, h1, h2, h3 {
@@ -30,6 +33,7 @@ p, li {
 .shopapp_wrapper {
 	width: 600px;
 	margin: 1.5em auto 3em auto;
+	background-color: #fff;
 	border: .1em solid #eee;
 }
 .shopapp_container {
@@ -38,6 +42,13 @@ p, li {
 	-moz-transition: all 500ms ease;
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
+}
+
+.label {
+	text-align: center;
+	padding: .5em;
+	display: block;
+	background-color: #ccc;
 }
 
 /* basic functionality */
