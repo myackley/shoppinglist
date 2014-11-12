@@ -8,7 +8,7 @@ html, body {
 }
 
 div, p, li, h1, h2, h3 {
-	box-sizing: box-border;
+	box-sizing: border-box;
 }
 
 /* type */
@@ -49,6 +49,57 @@ p, li {
 	padding: .5em;
 	display: block;
 	background-color: #ccc;
+	cursor: pointer;
+}
+
+/* items */
+.shopapp_list ul, .shopapp_panel-viewremoved ul {
+	padding: 0;
+	margin: .5em 0;
+	list-style-type: none;
+}
+
+.shopapp_list li:after, .shopapp_panel-viewremoved li:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+.shopapp_list ul li, .shopapp_panel-viewremoved ul li {
+	background-color: #eee;
+	margin: .3em 0;
+	padding: .3em;
+	width: 100%;
+	vertical-align: middle;
+}
+
+/* items > item */
+.shopapp_list-item {
+	float: left;
+}
+
+/* items > buttons */
+.shopapp_list-btns:after {
+	content: " ";
+	clear: both;
+	display: block;
+}
+.shopapp_list-btns {
+	float: right;
+}
+.shopapp_list-btns a {
+	display: block;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	border: 2px solid #bbb;
+	width: 2em;
+	height: 2em;
+	float: left;
+	background-color: #fff;
+	text-align: center;
+	line-height: 1.5;
+	color: #333;
 }
 
 /* basic functionality */
