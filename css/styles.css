@@ -53,6 +53,9 @@ p, li {
 }
 
 /* items */
+.shopapp_list {
+	padding: .5em;
+}
 .shopapp_list ul, .shopapp_panel-viewremoved ul {
 	padding: 0;
 	margin: .5em 0;
@@ -65,11 +68,16 @@ p, li {
 	clear: both;
 }
 .shopapp_list ul li, .shopapp_panel-viewremoved ul li {
-	background-color: #eee;
+	background-color: #ccc;
 	margin: .3em 0;
 	padding: .3em;
 	width: 100%;
 	vertical-align: middle;
+}
+.shopapp_list ul li p, .shopapp_panel-viewremoved ul li p {
+	padding: 0;
+	margin: .3em 0 .3em .5em;
+	font-size: 1em;
 }
 
 /* items > item */
@@ -98,7 +106,7 @@ p, li {
 	float: left;
 	background-color: #fff;
 	text-align: center;
-	line-height: 1.5;
+	line-height: 1.9;
 	color: #333;
 }
 
@@ -114,6 +122,18 @@ input,
 .shopapp_checkbox-additem:checked ~ .shopapp_panel-additem, 
 .shopapp_checkbox-viewremoved:checked ~ .shopapp_panel-viewremoved {
 	display: block;
+}
+
+/* add item */
+.shopapp_panel-additem {
+	padding: .5em;
+	background-color: #eee;
+}
+
+/* removed items */
+.shopapp_panel-viewremoved {
+	padding: .5em;
+	background-color: #eee;
 }
 
 /* media queries */
