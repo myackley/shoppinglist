@@ -89,6 +89,10 @@ button {
 	box-sizing: border-box;
 	font-size: 1em;	
 	border: none;
+	-webkit-transition: border-color 400ms ease;
+	-moz-transition: border-color 400ms ease;
+	-o-transition: border-color 400ms ease;
+	transition: border-color 400ms ease;
 }
 
 /* buttons */
@@ -98,12 +102,26 @@ button {
 	background-color: #75BA61;
 	cursor: pointer;
 	color: #fff;
+	-webkit-transition: background-color 400ms ease;
+	-moz-transition: background-color 400ms ease;
+	-o-transition: background-color 400ms ease;
+	transition: background-color 400ms ease;
 }
+.btn_label:hover {
+	background-color: #64A851;
+}
+
 .btn_cancel {
 	border-bottom: .3em solid #C1AE9C;
 }
+.btn_cancel:hover {
+	border-color: #C09B77;
+}
 .btn_submit {
 	border-bottom: .3em solid #81B273;
+}
+.btn_submit:hover {
+	border-color: #6EB25B;
 }
 
 .btn_icon {
@@ -120,17 +138,29 @@ button {
 	text-align: center;
 	line-height: 1.9;
 	color: #333;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
 }
 .btn_icon:first-child {
 	margin-right: .5em;
 }
 .shopapp_btn-check {
 	border-color: #C8C6C6;
-	color: green;
+	color: #81B273;
+}
+.shopapp_btn-check:hover {
+	border-color: #81B273;
+	color: #309912;
 }
 .shopapp_btn-remove {
 	border-color: #C8C6C6;
-	color: red;
+	color: #C1AE9C;
+}
+.shopapp_btn-remove:hover {
+	border-color: #C1AE9C;
+	color: #C56D53;
 }
 
 /* layout */
