@@ -5,15 +5,40 @@ html, body {
 	background: url('../img/food-bg.jpg') 0 0 #ccc no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+	color: #262125;
 }
 
 div, p, li, h1, h2, h3 {
 	box-sizing: border-box;
 }
 
+
+/* colors 
+
+default text => #262125
+wrapper outline => #C1AA80
+primary button back => #7A9572
+panel back => #D3DBD0
+submit button =>
+	back: #fff
+	border-bottom: #81B273;
+cancel button =>
+	back: #fff;
+	border-bottom: #C1AE9C;
+item area back => #E2D8C6
+items back => #F9F8F4
+items button border => #C8C6C6
+
+*/
+
+
 /* type */
 
-h1, h2 {font-family: 'Rock Salt', cursive;}
+h1, h2 {
+	font-family: 'Rock Salt', cursive;
+	text-align: center;
+	margin-top: 0;
+}
 
 h1 {font-size: 24px;}
 h2 {font-size: 18px;}
@@ -22,6 +47,90 @@ p, li {
 	font-family: 'News Cycle', sans-serif;
 	font-size: .9em;
 	color: #333;
+}
+label {
+	display: block;
+	padding: .5em 0;
+}
+
+.center {text-align: center;}
+
+.row {
+	width: 100%;
+	margin-bottom: 2em;
+}
+.row:before {
+	display: table;
+}
+.row:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+.row > .col {
+	display: table-cell;
+	float: left;
+	width: 30%;
+}
+.row > .col:first-child {
+	width: 70%;
+}
+
+.shopapp_container .panel {
+	padding: .5em;
+	background-color: #E6EDE3;
+}
+
+button {
+	background-color: #fff;
+	padding: .5em .7em;
+	margin: 0 .5em;
+	width: 5em;
+	box-sizing: border-box;
+	font-size: 1em;	
+	border: none;
+}
+
+/* buttons */
+
+.btn_label {
+	text-align: center;	
+	background-color: #75BA61;
+	cursor: pointer;
+	color: #fff;
+}
+.btn_cancel {
+	border-bottom: .3em solid #C1AE9C;
+}
+.btn_submit {
+	border-bottom: .3em solid #81B273;
+}
+
+.btn_icon {
+	display: block;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	border: 2px solid;
+	width: 2em;
+	height: 2em;
+	float: left;
+	background-color: #fff;
+	text-align: center;
+	line-height: 1.9;
+	color: #333;
+}
+.btn_icon:first-child {
+	margin-right: .5em;
+}
+.shopapp_btn-check {
+	border-color: #C8C6C6;
+	color: green;
+}
+.shopapp_btn-remove {
+	border-color: #C8C6C6;
+	color: red;
 }
 
 /* layout */
@@ -34,27 +143,17 @@ p, li {
 	width: 600px;
 	margin: 1.5em auto 3em auto;
 	background-color: #fff;
-	border: .1em solid #eee;
+	border-bottom: .7em solid #AE966B;
 }
 .shopapp_container {
-	padding: 1em;
-	-webkit-transition: all 500ms ease;
-	-moz-transition: all 500ms ease;
-	-o-transition: all 500ms ease;
-	transition: all 500ms ease;
-}
-
-.label {
-	text-align: center;
-	padding: .5em;
-	display: block;
-	background-color: #ccc;
-	cursor: pointer;
+	padding: 1em 1em 1.7em 1em;
 }
 
 /* items */
 .shopapp_list {
 	padding: .5em;
+	background-color: #E7E0D4;
+	margin: 1em 0;
 }
 .shopapp_list ul, .shopapp_panel-viewremoved ul {
 	padding: 0;
@@ -68,9 +167,9 @@ p, li {
 	clear: both;
 }
 .shopapp_list ul li, .shopapp_panel-viewremoved ul li {
-	background-color: #ccc;
-	margin: .3em 0;
-	padding: .3em;
+	background-color: #F9F8F4;
+	margin: .5em 0;
+	padding: .5em .3em;
 	width: 100%;
 	vertical-align: middle;
 }
@@ -84,6 +183,10 @@ p, li {
 .shopapp_list-item {
 	float: left;
 }
+.shopapp_list-item span {
+	display: inline-block;
+	padding: 0 1em 0 .3em;
+}
 
 /* items > buttons */
 .shopapp_list-btns:after {
@@ -94,24 +197,9 @@ p, li {
 .shopapp_list-btns {
 	float: right;
 }
-.shopapp_list-btns a {
-	display: block;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-o-border-radius: 50%;
-	border-radius: 50%;
-	border: 2px solid #bbb;
-	width: 2em;
-	height: 2em;
-	float: left;
-	background-color: #fff;
-	text-align: center;
-	line-height: 1.9;
-	color: #333;
-}
 
-/* basic functionality */
-input, 
+/* panels */
+input[type="checkbox"], 
 .shopapp_panel-additem,
 .shopapp_panel-viewremoved,
 .shopapp_checkbox-additem:checked ~ .shopapp_panel-viewremoved, 
@@ -124,16 +212,26 @@ input,
 	display: block;
 }
 
-/* add item */
-.shopapp_panel-additem {
-	padding: .5em;
-	background-color: #eee;
+.shopapp_panel-additem input[type="text"] {
+	width: 80%;
+	border: .1em solid #DADADA;
+	height: 26px;
+	font-size: 16px;
+}
+.shopapp_panel-additem input[type="text"]:focus {
+	border: .1em solid #DADADA;
+	outline: none;
 }
 
-/* removed items */
-.shopapp_panel-viewremoved {
-	padding: .5em;
-	background-color: #eee;
+/* select2 */
+.select2-container {
+	width: 50%;
+}
+.select2-container .select2-choice {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
 }
 
 /* media queries */

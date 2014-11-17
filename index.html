@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
 	<link href='http://fonts.googleapis.com/css?family=News+Cycle|Rock+Salt' rel='stylesheet' type='text/css'>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.css">
 
 	<link rel="stylesheet" href="css/styles.css">
 </head>
@@ -17,25 +18,60 @@
 		<div class="shopapp_wrapper">
 			<div class="shopapp_container">
 
-				<input type="checkbox" class="shopapp_checkbox-additem" id="additem">
-				<label for="additem" class="label"><span class="fa fa-plus"></span> Add Item</label>
+				<h1>Shopping List</h1>
 
-				<div class="shopapp_panel-additem">
-					additem
+				<input type="checkbox" class="shopapp_checkbox-additem" id="additem">
+				<label for="additem" class="btn_label"><span class="fa fa-plus"></span> Add Item</label>
+
+				<div class="panel shopapp_panel-additem">
+					
+
+					<div class="row">
+						<div class="col">
+							<label for="additem_item">Item</label>
+							<input type="text" id="additem_item">
+						</div>
+
+						<div class="col">
+							<label for="additem_item">Qty</label>
+							<select id="additem_qty" class="select2">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</div>
+					</div>
+
+
+					<div class="center">
+						<button type="button" class="btn_cancel">Cancel</button>
+						<button type="submit" class="btn_submit">Add</button>
+					</div>
+
 				</div>
 
 				<div class="shopapp_list">
+
+					<h2>Items</h2>
+
 					<ul>
 						<li>
 							<div class="shopapp_list-item">
-								<p>Item<span>(x3)</span></p>
+								<p><span>3</span>Item</p>
 							</div>
 							<div class="shopapp_list-btns">
-								<a href="#" class="shopapp_btn-check">
+								<a href="#" class="btn_icon shopapp_btn-check">
 									<span class="fa fa-check">
 									</span>
 								</a>
-								<a href="#" class="shopapp_btn-remove">
+								<a href="#" class="btn_icon shopapp_btn-remove">
 									<span class="fa fa-close">
 									</span>
 								</a>
@@ -43,14 +79,14 @@
 						</li>
 						<li>
 							<div class="shopapp_list-item">
-								<p>Item<span>(x3)</span></p>
+								<p><span>3</span>Item</p>
 							</div>
 							<div class="shopapp_list-btns">
-								<a href="#" class="shopapp_btn-check">
+								<a href="#" class="btn_icon shopapp_btn-check">
 									<span class="fa fa-check">
 									</span>
 								</a>
-								<a href="#" class="shopapp_btn-remove">
+								<a href="#" class="btn_icon shopapp_btn-remove">
 									<span class="fa fa-close">
 									</span>
 								</a>
@@ -60,20 +96,20 @@
 				</div>
 
 				<input type="checkbox" class="shopapp_checkbox-viewremoved" id="viewremoved">
-				<label for="viewremoved" class="label"><span class="fa fa-eye"></span> View Removed</label>
+				<label for="viewremoved" class="btn_label"><span class="fa fa-eye"></span> View Removed</label>
 
-				<div class="shopapp_panel-viewremoved">
+				<div class="panel shopapp_panel-viewremoved">
 					<ul>
 						<li>
 							<div class="shopapp_list-item">
-								<p>Nothing to see here...</p>
+								<p><span>9</span>Item</p>
 							</div>
 							<div class="shopapp_list-btns">
-								<a href="#" class="shopapp_btn-check">
+								<a href="#" class="btn_icon shopapp_btn-check">
 									<span class="fa fa-check">
 									</span>
 								</a>
-								<a href="#" class="shopapp_btn-remove">
+								<a href="#" class="btn_icon shopapp_btn-remove">
 									<span class="fa fa-close">
 									</span>
 								</a>
@@ -88,6 +124,7 @@
 	</div>
 
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
