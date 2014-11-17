@@ -53,6 +53,8 @@ label {
 	padding: .5em 0;
 }
 
+input:focus, button:focus, select:focus {outline: none;}
+
 .center {text-align: center;}
 
 .row {
@@ -163,6 +165,18 @@ button {
 	color: #C56D53;
 }
 
+/* validation */
+
+.valid_additem {
+	padding: .5em;
+	border: .1em solid #C1AE9C;
+	background-color: #fff;
+	color: #C1AE9C;
+	display: none;
+	margin: 0 0 .3em 0;
+}
+
+
 /* layout */
 .shopapp {
 	width: 100%;
@@ -247,13 +261,18 @@ input[type="checkbox"],
 	border: .1em solid #DADADA;
 	height: 26px;
 	font-size: 16px;
-}
-.shopapp_panel-additem input[type="text"]:focus {
-	border: .1em solid #DADADA;
-	outline: none;
+	padding-left: .3em;
 }
 
-/* select2 */
+.shopapp_panel-additem select {
+	width: 50%;
+	height: 26px;
+	font-size: 16px;
+	padding-left: .3em;
+	border: .1em solid #DADADA;
+}
+
+/* select2 
 .select2-container {
 	width: 50%;
 }
@@ -263,6 +282,7 @@ input[type="checkbox"],
 	-o-border-radius: 0;
 	border-radius: 0;
 }
+*/
 
 /* media queries */
 @media all and (max-width: 480px) {
