@@ -15,11 +15,11 @@ $(document).ready(function() {
 		var itemName = $("#additem_item").val();
 		var itemQuantity = $("#additem_qty option:selected").val();
 		var listitem = "";
-		var itemBtns = "<div class=\"shopapp_list-btns\"><a href=\"#\" class=\"btn_icon shopapp_btn-check\"><span class=\"fa fa-check\"></span></a><a href=\"#\" class=\"btn_icon shopapp_btn-remove\"><span class=\"fa fa-close\"></span></a></div>"
+		var itemBtns = "<div class=\"shopapp_list-btns\"><button type=\"button\" class=\"btn_icon shopapp_btn-check\"><span class=\"fa fa-check\"></span></button><button type=\"button\" class=\"btn_icon shopapp_btn-remove\"><span class=\"fa fa-close\"></span></button></div>"
 
 		if ( itemName != "" || itemName.length > 2 ) {
 			$(".valid_additem").css("display","none");
-			
+
 			//	format values into list item
 			listitem = "<li><div class=\"shopapp_list-item\"><p><span>"+itemQuantity+"</span>"+itemName+"</p></div>"+itemBtns+"</li>";
 
@@ -32,7 +32,6 @@ $(document).ready(function() {
 
 	}
 
-
 	$(".btn_submit").on("click", addItem);
 	$(".btn_cancel").on("click", function() {
 		$("#additem_item").val("");
@@ -40,19 +39,35 @@ $(document).ready(function() {
 	});
 
 	// mark as "purchased"
+	$(".shopapp_list ul").on("click", ".shopapp_btn-check", function (event) {
+		event.preventDefault();
 
-	//		traverse to find this item in dom
+		// apply class to show as "purchased"
+		if ( $(this).hasClass("purchased") == true ) {
+			$(this).removeClass("purchased");
+		} else if ( $(this).hasClass("purchased") == false ) {
+			//	remove the class if marked as "purchased" by accident
+			$(this).addClass("purchased");
+		} else {
+			return false;
+		}
 
-	//		apply class to show as "purchased"
-
-	//		remove the class if marked as "purchased" by accident
+	});
 
 	// remove from list
+	$(".shopapp_list ul").on("click", ".shopapp_btn-remove", function (event) {
+		event.preventDefault();	
 
-	//		traverse to find this item in dom
+		//	store the item
+		var moveItem = $(this).closest("li");
 
-	//		store the item
+		//  remove from list
+		$(this).closest("li").remove();
 
-	//		append the item to shopapp_panel-viewremoved ul
+		//	append the item to shopapp_panel-viewremoved ul
+		$(".shopapp_panel-viewremoved ul").append(moveItem);
+		
+
+	});
 
 });

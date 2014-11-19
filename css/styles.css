@@ -85,7 +85,6 @@ input:focus, button:focus, select:focus {outline: none;}
 
 button {
 	background-color: #fff;
-	padding: .5em .7em;
 	margin: 0 .5em;
 	width: 5em;
 	box-sizing: border-box;
@@ -138,7 +137,7 @@ button {
 	float: left;
 	background-color: #fff;
 	text-align: center;
-	line-height: 1.9;
+	padding-top: 0;
 	color: #333;
 	-webkit-transition: all 400ms ease;
 	-moz-transition: all 400ms ease;
@@ -163,6 +162,10 @@ button {
 .shopapp_btn-remove:hover {
 	border-color: #C1AE9C;
 	color: #C56D53;
+}
+.purchased {
+	background-color: #81B273;
+	color: #fff;
 }
 
 /* validation */
